@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Packages from './components/packages/packages'
+import Header from './components/header'
 import './App.css'
 
 function App() {
@@ -12,10 +13,6 @@ function App() {
         )
       
       const data = await packages.json();
-
-
-      console.log(data.responseObject)
-
       setItems(data.responseObject)
    }
 
@@ -26,8 +23,8 @@ function App() {
 
   return (
     <div className="container">
+      <Header />
       <Packages items={items} />
-
     </div>
   );
 }
